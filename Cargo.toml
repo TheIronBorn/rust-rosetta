@@ -1,0 +1,1258 @@
+[package]
+name = "rust-rosetta"
+version = "0.0.1"
+build = "build.rs"
+authors = [
+    "Andrew Hobden, https://github.com/Hoverbear",
+    "Adolfo Ochagavía, https://github.com/aochagavia",
+    "Paolo Falabella, https://github.com/pfalabella",
+    "Boris Egorov, https://github.com/JIghtuse",
+    "Joe Schafer, https://github.com/jschaf",
+    "Thomas P, https://github.com/TisButMe",
+    "Bjarki Ágúst Guðmundsson, https://github.com/SuprDewd",
+    "Thiez, https://github.com/Thiez",
+    "Simon Morris simon,-https://github.com/morris",
+    "eliovir, https://github.com/eliovir",
+    "Joshua Yanovski, https://github.com/pythonesque",
+    "Nicolas Barbey, https://github.com/nbarbey",
+    "yuanchenyang, https://github.com/yuanchenyang",
+    "Jonathan S, https://github.com/gereeter",
+    "JakeMick, https://github.com/JakeMick",
+    "Rohan Prinja, https://github.com/wenderen",
+    "Andres Nötzli, https://github.com/4tXJ7f",
+    "Eric S. Bullington, https://github.com/esbullington",
+    "Gulshan Singh, https://github.com/gsingh93",
+    "SiegeLord, https://github.com/SiegeLord",
+    "Tim Joseph Dumol, https://github.com/TimDumol",
+    "Utkarsh Kukreti, https://github.com/utkarshkukreti",
+    "Florian MOREL, https://github.com/Einh06",
+    "webmobster, https://github.com/webmobster",
+    "Mathias Labeyrie, https://github.com/Nojan",
+    "Wei Yen, https://github.com/yen223",
+    "Hugh Manning, https://github.com/hmanning77",
+    "Gavin Baker, https://github.com/gavinb",
+    "Rupert Lane, https://github.com/rupertl",
+    "Joshua Skootsky, https://github.com/JoshuaSkootsky",
+    "James Hurst, https://github.com/jamesrhurst",
+    "Yukang Chen, https://github.com/chenyukang",
+    "Rahul Sharma, https://github.com/creativcoder",
+    "Rootul Patel, https://github.com/rootulp",
+    "Frank McSherry, http://github.com/frankmcsherry",
+    "Bartosz Marcinkowski, https://github.com/bm371613",
+    "Yale Cason, https://github.com/ghotiphud",
+    "Makoto Nakashima, https://github.com/gifnksm",
+    "Marvin Löbel, https://github.com/Kimundi",
+    "Raphael Heitjohann, https://github.com/trideon3",
+    "Glen De Cauwsemaecker, https://github.com/glendc",
+    "Amos Bird, https://github.com/amosbird",
+    "Brian Schmitz, https://github.com/foodhype",
+    "Juan Vidal Pich, https://github.com/juanevp",
+    "Peter Jacobs, https://github.com/crespyl",
+    "Alex Globus, https://github.com/aglobus",
+    "Tair Rzayev, https://github.com/tairrzayev",
+    "Mathieu David, https://github.com/azerupi",
+    "Keiichi Watanabe, https://github.com/kw-udon",
+    "ZoomRmc, https://github.com/zoomrmc",
+    "Kevin Darlington, https://github.com/kdar",
+    "Andy Russell, https://github.com/euclio",
+    "Joel S, https://github.com/bitrauser",
+    "Stefan Bostain, https://github.com/zilulil",
+    "Fernando Gimenez, https://github.com/pijamarda",
+    "Michael Huynh, https://github.com/miqid",
+    "Marc Tiehuis, https://github.com/tiehuis",
+    "Dillon Tracy, https://github.com/ibnopcit",
+    "Orhan Balci, https://github.com/orhanbalci",
+    "Jesús Espino, https://github.com/jespino",
+    "Allen Bui, https://github.com/allenbui94",
+    "Andrey Tonkih, https://github.com/xosmig",
+    "Thibault Barbie, https://github.com/thibaultbarbie",
+    "Corentin Henry, https://github.com/little-dude",
+    "Dylan Maccora, https://github.com/maccoda",
+    "Stefan Müller, https://github.com/zzeroo",
+    "Kunal Tyagi, https://github.com/kunaltyagi",
+]
+
+[dependencies]
+clap = "2"
+difference = "1"
+env_logger = "0.4"
+log = "0.3"
+meta = { path = "meta" }
+reqwest = "0.4"
+serde = "1"
+serde_json = "1"
+term = "0.4"
+
+[build-dependencies]
+meta = { path = "meta" }
+unicode-segmentation = "1"
+
+[workspace]
+members = [
+    # http://rosettacode.org/wiki/100_doors
+    "tasks/100-doors",
+
+    # http://rosettacode.org/wiki/15_Puzzle_Game
+    "tasks/15-puzzle-game",
+
+    # http://rosettacode.org/wiki/2048
+    "tasks/2048",
+
+    # http://rosettacode.org/wiki/24_game
+    "tasks/24-game",
+
+    # http://rosettacode.org/wiki/24_game/Solve
+    "tasks/24-game/solve",
+
+    # http://rosettacode.org/wiki/9_billion_names_of_God_the_integer
+    "tasks/9-billion-names-of-god-the-integer",
+
+    # http://rosettacode.org/wiki/99_Bottles_of_Beer
+    "tasks/99-bottles-of-beer",
+
+    # http://rosettacode.org/wiki/A%2BB
+    "tasks/a-plus-b",
+
+    # http://rosettacode.org/wiki/ABC_Problem
+    "tasks/abc-problem",
+
+    # http://rosettacode.org/wiki/Abstract_type
+    "tasks/abstract-type",
+
+    # http://rosettacode.org/wiki/Abundant,_deficient_and_perfect_number_classifications
+    "tasks/abundant-deficient-and-perfect-number-classifications",
+
+    # http://rosettacode.org/wiki/Accumulator_factory
+    "tasks/accumulator-factory",
+
+    # http://rosettacode.org/wiki/Ackermann_function
+    "tasks/ackermann-function",
+
+    # http://rosettacode.org/wiki/Active_object
+    "tasks/active-object",
+
+    # http://rosettacode.org/wiki/Address_of_a_variable
+    "tasks/address-of-a-variable",
+
+    # http://rosettacode.org/wiki/AKS_test_for_primes
+    "tasks/aks-test-for-primes",
+
+    # http://rosettacode.org/wiki/Align_columns
+    "tasks/align-columns",
+
+    # http://rosettacode.org/wiki/Aliquot_sequence_classifications
+    "tasks/aliquot-sequence-classifications",
+
+    # http://rosettacode.org/wiki/Almost_prime
+    "tasks/almost-prime",
+
+    # http://rosettacode.org/wiki/Amicable_pairs
+    "tasks/amicable-pairs",
+
+    # http://rosettacode.org/wiki/Anagrams
+    "tasks/anagrams",
+
+    # http://rosettacode.org/wiki/Animation
+    "tasks/animation",
+
+    # http://rosettacode.org/wiki/Anonymous_recursion
+    "tasks/anonymous-recursion",
+
+    # http://rosettacode.org/wiki/Apply_a_callback_to_an_array
+    "tasks/apply-a-callback-to-an-array",
+
+    # http://rosettacode.org/wiki/Arbitrary-precision_integers_(included)
+    "tasks/arbitrary-precision-integers-included",
+
+    # http://rosettacode.org/wiki/Archimedean_spiral
+    "tasks/archimedean-spiral",
+
+    # http://rosettacode.org/wiki/Arena_storage_pool
+    "tasks/arena-storage-pool",
+
+    # http://rosettacode.org/wiki/Arithmetic/Complex
+    "tasks/arithmetic/complex",
+
+    # http://rosettacode.org/wiki/Arithmetic/Integer
+    "tasks/arithmetic/integer",
+
+    # http://rosettacode.org/wiki/Arithmetic/Rational
+    "tasks/arithmetic/rational",
+
+    # http://rosettacode.org/wiki/Arithmetic-geometric_mean
+    "tasks/arithmetic-geometric-mean",
+
+    # http://rosettacode.org/wiki/Array_concatenation
+    "tasks/array-concatenation",
+
+    # http://rosettacode.org/wiki/Array_length
+    "tasks/array-length",
+
+    # http://rosettacode.org/wiki/Arrays
+    "tasks/arrays",
+
+    # http://rosettacode.org/wiki/Assertions
+    "tasks/assertions",
+
+    # http://rosettacode.org/wiki/Associative_array/Creation
+    "tasks/associative-array/creation",
+
+    # http://rosettacode.org/wiki/Associative_array/Iteration
+    "tasks/associative-array/iteration",
+
+    # http://rosettacode.org/wiki/Atomic_updates
+    "tasks/atomic-updates",
+
+    # http://rosettacode.org/wiki/Average_loop_length
+    "tasks/average-loop-length",
+
+    # http://rosettacode.org/wiki/Averages/Arithmetic_mean
+    "tasks/averages/arithmetic-mean",
+
+    # http://rosettacode.org/wiki/Averages/Mean_angle
+    "tasks/averages/mean-angle",
+
+    # http://rosettacode.org/wiki/Averages/Median
+    "tasks/averages/median",
+
+    # http://www.rosettacode.org/wiki/Averages/Mode
+    "tasks/averages/mode",
+
+    # http://rosettacode.org/wiki/Averages/Root_mean_square
+    "tasks/averages/root-mean-square",
+
+    # http://rosettacode.org/wiki/Averages/Simple_moving_average
+    "tasks/averages/simple-moving-average",
+
+    # http://rosettacode.org/wiki/AVL_tree
+    "tasks/avl-tree",
+
+    # http://rosettacode.org/wiki/Balanced_brackets
+    "tasks/balanced-brackets",
+
+    # http://rosettacode.org/wiki/Benford%27s_law
+    "tasks/benfords-law",
+
+    # http://rosettacode.org/wiki/Bernoulli_numbers
+    "tasks/bernoulli-numbers",
+
+    # http://rosettacode.org/wiki/Best_shuffle
+    "tasks/best-shuffle",
+
+    # http://rosettacode.org/wiki/Binary_digits
+    "tasks/binary-digits",
+
+    # http://rosettacode.org/wiki/Binary_search
+    "tasks/binary-search",
+
+    # http://rosettacode.org/wiki/Bitcoin/address_validation
+    "tasks/bitcoin/address-validation",
+
+    # http://rosettacode.org/wiki/Bitcoin/public_point_to_address
+    "tasks/bitcoin/public-point-to-address",
+
+    # http://rosettacode.org/wiki/Bitmap
+    "tasks/bitmap",
+
+    # http://rosettacode.org/wiki/Bitmap/Write_a_PPM_file
+    "tasks/bitmap/write-a-ppm-file",
+
+    # http://rosettacode.org/wiki/Bitwise_operations
+    "tasks/bitwise-operations",
+
+    # http://rosettacode.org/wiki/Boolean_values
+    "tasks/boolean-values",
+
+    # http://rosettacode.org/wiki/Brownian_tree
+    "tasks/brownian-tree",
+
+    # http://rosettacode.org/wiki/Bulls_and_cows
+    "tasks/bulls-and-cows",
+
+    # http://rosettacode.org/wiki/Caesar_cipher
+    "tasks/caesar-cipher",
+
+    # http://rosettacode.org/wiki/Call_a_foreign-language_function
+    "tasks/call-a-foreign-language-function",
+
+    # http://rosettacode.org/wiki/Call_an_object_method
+    "tasks/call-an-object-method",
+
+    # http://rosettacode.org/wiki/Carmichael_3_strong_pseudoprimes
+    "tasks/carmichael-3-strong-pseudoprimes",
+
+    # http://rosettacode.org/wiki/Case-sensitivity_of_identifiers
+    "tasks/case-sensitivity-of-identifiers",
+
+    # http://rosettacode.org/wiki/Catalan_numbers
+    "tasks/catalan-numbers",
+
+    # http://rosettacode.org/wiki/Catamorphism
+    "tasks/catamorphism",
+
+    # http://rosettacode.org/wiki/Character_codes
+    "tasks/character-codes",
+
+    # http://rosettacode.org/wiki/Chat_server
+    "tasks/chat-server",
+
+    # http://rosettacode.org/wiki/Check_input_device_is_a_terminal
+    "tasks/check-input-device-is-a-terminal",
+
+    # http://rosettacode.org/wiki/Check_output_device_is_a_terminal
+    "tasks/check-output-device-is-a-terminal",
+
+    # http://rosettacode.org/wiki/Check_that_file_exists
+    "tasks/check-that-file-exists",
+
+    # http://rosettacode.org/wiki/Checkpoint_synchronization
+    "tasks/checkpoint-synchronization",
+
+    # http://rosettacode.org/wiki/Chinese_remainder_theorem
+    "tasks/chinese-remainder-theorem",
+
+    # http://rosettacode.org/wiki/Circles_of_given_radius_through_two_points
+    "tasks/circles-of-given-radius-through-two-points",
+
+    # http://rosettacode.org/wiki/Closest-pair_problem
+    "tasks/closest-pair-problem",
+
+    # http://rosettacode.org/wiki/Closures/Value_capture
+    "tasks/closures/value-capture",
+
+    # http://rosettacode.org/wiki/Collections
+    "tasks/collections",
+
+    # http://rosettacode.org/wiki/Combinations
+    "tasks/combinations",
+
+    # http://rosettacode.org/wiki/Combinations_with_repetitions
+    "tasks/combinations-with-repetitions",
+
+    # http://rosettacode.org/wiki/Comma_quibbling
+    "tasks/comma-quibbling",
+
+    # http://rosettacode.org/wiki/Command-line_arguments
+    "tasks/command-line-arguments",
+
+    # http://rosettacode.org/wiki/Comments
+    "tasks/comments",
+
+    # http://rosettacode.org/wiki/Compile-time_calculation
+    "tasks/compile-time-calculation",
+
+    # http://rosettacode.org/wiki/Compound_data_type
+    "tasks/compound-data-type",
+
+    # http://rosettacode.org/wiki/Concurrent_computing
+    "tasks/concurrent-computing",
+
+    # http://rosettacode.org/wiki/Continued_fraction
+    "tasks/continued-fraction",
+
+    # http://rosettacode.org/wiki/Continued_fraction/Arithmetic/Construct_from_rational_number
+    "tasks/continued-fraction/arithmetic/construct-from-rational-number",
+
+    # http://rosettacode.org/wiki/Convert_seconds_to_compound_duration
+    "tasks/convert-seconds-to-compound-duration",
+
+    # http://rosettacode.org/wiki/Conway's_Game_of_Life
+    "tasks/conways-game-of-life",
+
+    # http://rosettacode.org/wiki/Copy_a_string
+    "tasks/copy-a-string",
+
+    # http://rosettacode.org/wiki/Count_in_octal
+    "tasks/count-in-octal",
+
+    # http://rosettacode.org/wiki/Count_occurrences_of_a_substring
+    "tasks/count-occurrences-of-a-substring",
+
+    # http://rosettacode.org/wiki/CRC-32
+    "tasks/crc-32",
+
+    # http://rosettacode.org/wiki/Create_a_file
+    "tasks/create-a-file",
+
+    # http://rosettacode.org/wiki/CSV_data_manipulation
+    "tasks/csv-data-manipulation",
+
+    # http://rosettacode.org/wiki/Currying
+    "tasks/currying",
+
+    # http://rosettacode.org/wiki/Date_format
+    "tasks/date-format",
+
+    # http://rosettacode.org/wiki/Day_of_the_week
+    "tasks/day-of-the-week",
+
+    # http://rosettacode.org/wiki/Deal_cards_for_FreeCell
+    "tasks/deal-cards-for-freecell",
+
+    # http://rosettacode.org/wiki/Define_a_primitive_data_type
+    "tasks/define-a-primitive-data-type",
+
+    # http://rosettacode.org/wiki/Delete_a_file
+    "tasks/delete-a-file",
+
+    # http://rosettacode.org/wiki/Determine_if_a_string_is_numeric
+    "tasks/determine-if-a-string-is-numeric",
+
+    # http://rosettacode.org/wiki/Determine_if_only_one_instance_is_running
+    "tasks/determine-if-only-one-instance-is-running",
+
+    # http://rosettacode.org/wiki/Digital_root
+    "tasks/digital-root",
+
+    # http://rosettacode.org/wiki/Dijkstra's_algorithm
+    "tasks/dijkstras-algorithm",
+
+    # http://rosettacode.org/wiki/Dining_philosophers
+    "tasks/dining-philosophers",
+
+    # http://rosettacode.org/wiki/Discordian_date
+    "tasks/discordian-date",
+
+    # http://rosettacode.org/wiki/DNS_query
+    "tasks/dns-query",
+
+    # http://rosettacode.org/wiki/Dot_product
+    "tasks/dot-product",
+
+    # http://rosettacode.org/wiki/Doubly-linked_list/Element_definition
+    "tasks/doubly-linked-list/element-definition",
+
+    # http://rosettacode.org/wiki/Doubly-linked_list/Element_insertion
+    "tasks/doubly-linked-list/element-insertion",
+
+    # http://rosettacode.org/wiki/Dutch_national_flag_problem
+    "tasks/dutch-national-flag-problem",
+
+    # http://rosettacode.org/wiki/Echo_server
+    "tasks/echo-server",
+
+    # http://rosettacode.org/wiki/Element-wise_operations
+    "tasks/element-wise-operations",
+
+    # http://rosettacode.org/wiki/Empty_directory
+    "tasks/empty-directory",
+
+    # http://rosettacode.org/wiki/Empty_program
+    "tasks/empty-program",
+
+    # http://rosettacode.org/wiki/Enforced_immutability
+    "tasks/enforced-immutability",
+
+    # http://rosettacode.org/wiki/Entropy
+    "tasks/entropy",
+
+    # http://rosettacode.org/wiki/Enumerations
+    "tasks/enumerations",
+
+    # http://rosettacode.org/wiki/Environment_variables
+    "tasks/environment-variables",
+
+    # http://rosettacode.org/wiki/Equilibrium_index
+    "tasks/equilibrium-index",
+
+    # http://rosettacode.org/wiki/Ethiopian_multiplication
+    "tasks/ethiopian-multiplication",
+
+    # http://rosettacode.org/wiki/Euler's_sum_of_powers_conjecture
+    "tasks/eulers-sum-of-powers-conjecture",
+
+    # http://rosettacode.org/wiki/Evaluate_binomial_coefficients
+    "tasks/evaluate-binomial-coefficients",
+
+    # http://rosettacode.org/wiki/Even_or_odd
+    "tasks/even-or-odd",
+
+    # http://rosettacode.org/wiki/Events
+    "tasks/events",
+
+    # http://rosettacode.org/wiki/Evolutionary_algorithm
+    "tasks/evolutionary-algorithm",
+
+    # http://rosettacode.org/wiki/Execute_a_Markov_algorithm
+    "tasks/execute-a-markov-algorithm",
+
+    # http://rosettacode.org/wiki/Execute_a_system_command
+    "tasks/execute-a-system-command",
+
+    # http://rosettacode.org/wiki/Execute_Brain****
+    "tasks/execute-brainfuck",
+
+    # http://rosettacode.org/wiki/Execute_HQ9+
+    "tasks/execute-hq9-plus",
+
+    # http://rosettacode.org/wiki/Factorial
+    "tasks/factorial",
+
+    # http://rosettacode.org/wiki/Factors_of_an_integer
+    "tasks/factors-of-an-integer",
+
+    # http://rosettacode.org/wiki/Fast_Fourier_transform
+    "tasks/fast-fourier-transform",
+
+    # http://rosettacode.org/wiki/FASTA_format
+    "tasks/fasta-format",
+
+    # http://rosettacode.org/wiki/Fibonacci_n-step_number_sequences
+    "tasks/fibonacci-n-step-number-sequences",
+
+    # http://rosettacode.org/wiki/Fibonacci_sequence
+    "tasks/fibonacci-sequence",
+
+    # http://rosettacode.org/wiki/Fibonacci_word
+    "tasks/fibonacci-word",
+
+    # http://rosettacode.org/wiki/File_input/output
+    "tasks/file-input-output",
+
+    # http://rosettacode.org/wiki/File_size
+    "tasks/file-size",
+
+    # http://rosettacode.org/wiki/Filter
+    "tasks/filter",
+
+    # http://rosettacode.org/wiki/Find_limit_of_recursion
+    "tasks/find-limit-of-recursion",
+
+    # http://rosettacode.org/wiki/FizzBuzz
+    "tasks/fizzbuzz",
+
+    # http://rosettacode.org/wiki/Flatten_a_list
+    "tasks/flatten-a-list",
+
+    # http://rosettacode.org/wiki/Flipping_bits_game
+    "tasks/flipping-bits-game",
+
+    # http://rosettacode.org/wiki/Forest_fire
+    "tasks/forest-fire",
+
+    # http://rosettacode.org/wiki/Fork
+    "tasks/fork",
+
+    # http://rosettacode.org/wiki/Formatted_numeric_output
+    "tasks/formatted-numeric-output",
+
+    # http://rosettacode.org/wiki/Four_bit_adder
+    "tasks/four-bit-adder",
+
+    # http://rosettacode.org/wiki/FTP
+    "tasks/ftp",
+
+    # http://rosettacode.org/wiki/Function_composition
+    "tasks/function-composition",
+
+    # http://rosettacode.org/wiki/Function_definition
+    "tasks/function-definition",
+
+    # http://rosettacode.org/wiki/General_FizzBuzz
+    "tasks/general-fizzbuzz",
+
+    # http://rosettacode.org/wiki/Generate_lower_case_ASCII_alphabet
+    "tasks/generate-lower-case-ascii-alphabet",
+
+    # http://rosettacode.org/wiki/Generic_swap
+    "tasks/generic-swap",
+
+    # http://rosettacode.org/wiki/Globally_replace_text_in_several_files
+    "tasks/globally-replace-text-in-several-files",
+
+    # http://rosettacode.org/wiki/Gray_code
+    "tasks/gray-code",
+
+    # http://rosettacode.org/wiki/Greatest_common_divisor
+    "tasks/greatest-common-divisor",
+
+    # http://rosettacode.org/wiki/Greatest_element_of_a_list
+    "tasks/greatest-element-of-a-list",
+
+    # http://rosettacode.org/wiki/Greatest_subsequential_sum
+    "tasks/greatest-subsequential-sum",
+
+    # http://rosettacode.org/wiki/Guess_the_number
+    "tasks/guess-the-number",
+
+    # http://rosettacode.org/wiki/Guess_the_number/With_feedback
+    "tasks/guess-the-number/with-feedback",
+
+    # http://rosettacode.org/wiki/Guess_the_number/With_feedback_(player)
+    "tasks/guess-the-number/with-feedback-player",
+
+    # http://rosettacode.org/wiki/Hailstone_sequence
+    "tasks/hailstone-sequence",
+
+    # http://rosettacode.org/wiki/Hamming_numbers
+    "tasks/hamming-numbers",
+
+    # http://rosettacode.org/wiki/Handle_a_signal
+    "tasks/handle-a-signal",
+
+    # http://rosettacode.org/wiki/Happy_numbers
+    "tasks/happy-numbers",
+
+    # http://rosettacode.org/wiki/Harshad_or_Niven_series
+    "tasks/harshad-or-niven-series",
+
+    # http://rosettacode.org/wiki/Hash_from_two_arrays
+    "tasks/hash-from-two-arrays",
+
+    # http://rosettacode.org/wiki/Hash_join
+    "tasks/hash-join",
+
+    # http://rosettacode.org/wiki/Hello_world/Graphical
+    "tasks/hello-world/graphical",
+
+    # http://www.rosettacode.org/wiki/Hello_world/Line_printer
+    "tasks/hello-world/line-printer",
+
+    # http://rosettacode.org/wiki/Hello_world/Newbie
+    "tasks/hello-world/newbie",
+
+    # http://rosettacode.org/wiki/Hello_world/Newline_omission
+    "tasks/hello-world/newline-omission",
+
+    # http://rosettacode.org/wiki/Hello_world/Standard_error
+    "tasks/hello-world/standard-error",
+
+    # http://rosettacode.org/wiki/Hello_world/Text
+    "tasks/hello-world/text",
+
+    # http://rosettacode.org/wiki/Hello_world/Web_server
+    "tasks/hello-world/web-server",
+
+    # http://rosettacode.org/wiki/Here_document
+    "tasks/here-document",
+
+    # http://rosettacode.org/wiki/Higher-order_functions
+    "tasks/higher-order-functions",
+
+    # http://rosettacode.org/wiki/Hofstadter_Q_sequence
+    "tasks/hofstadter-q-sequence",
+
+    # http://rosettacode.org/wiki/Horner%27s_rule_for_polynomial_evaluation
+    "tasks/horners-rule-for-polynomial-evaluation",
+
+    # http://rosettacode.org/wiki/Host_introspection
+    "tasks/host-introspection",
+
+    # http://rosettacode.org/wiki/Hough_transform
+    "tasks/hough-transform",
+
+    # http://rosettacode.org/wiki/HTTP
+    "tasks/http",
+
+    # http://rosettacode.org/wiki/HTTPS
+    "tasks/https",
+
+    # http://rosettacode.org/wiki/HTTPS/Authenticated
+    "tasks/https/authenticated",
+
+    # http://rosettacode.org/wiki/Huffman_coding
+    "tasks/huffman-coding",
+
+    # http://rosettacode.org/wiki/I_before_E_except_after_C
+    "tasks/i-before-e-except-after-c",
+
+    # http://rosettacode.org/wiki/IBAN
+    "tasks/iban",
+
+    # http://rosettacode.org/wiki/Include_a_file
+    "tasks/include-a-file",
+
+    # http://rosettacode.org/wiki/Increment_a_numerical_string
+    "tasks/increment-a-numerical-string",
+
+    # http://rosettacode.org/wiki/Infinity
+    "tasks/infinity",
+
+    # http://rosettacode.org/wiki/Input_loop
+    "tasks/input-loop",
+
+    # http://rosettacode.org/wiki/Integer_comparison
+    "tasks/integer-comparison",
+
+    # http://rosettacode.org/wiki/Integer_sequence
+    "tasks/integer-sequence",
+
+    # https://rosettacode.org/wiki/Iterated_digits_squaring
+    "tasks/iterated-digits-squaring",
+
+    # http://rosettacode.org/wiki/Jaro_distance
+    "tasks/jaro-distance",
+
+    # http://rosettacode.org/wiki/Jensen's_Device
+    "tasks/jensens-device",
+
+    # http://rosettacode.org/wiki/JortSort
+    "tasks/jortsort",
+
+    # http://rosettacode.org/wiki/Josephus_problem
+    "tasks/josephus-problem",
+
+    # http://rosettacode.org/wiki/JSON
+    "tasks/json",
+
+    # http://rosettacode.org/wiki/K-d_tree
+    "tasks/k-d-tree",
+
+    # http://rosettacode.org/wiki/K-means%2B%2B_clustering
+    "tasks/k-meanspp-clustering",
+
+    # http://rosettacode.org/wiki/Kahan_summation
+    "tasks/kahan-summation",
+
+    # http://rosettacode.org/wiki/Keyboard_input/Obtain_a_Y_or_N_response
+    "tasks/keyboard-input/obtain-a-y-or-n-response",
+
+    # http://rosettacode.org/wiki/Knapsack_problem/0-1
+    "tasks/knapsack-problem/0-1",
+
+    # http://rosettacode.org/wiki/Knight's_tour
+    "tasks/knights-tour",
+
+    # http://rosettacode.org/wiki/Knuth_shuffle
+    "tasks/knuth-shuffle",
+
+    # http://rosettacode.org/wiki/Langton's_ant
+    "tasks/langtons-ant",
+
+    # http://rosettacode.org/wiki/Leap_year
+    "tasks/leap-year",
+
+    # http://rosettacode.org/wiki/Letter_frequency
+    "tasks/letter-frequency",
+
+    # http://rosettacode.org/wiki/Levenshtein_distance
+    "tasks/levenshtein-distance",
+
+    # http://rosettacode.org/wiki/Levenshtein_distance/Alignment
+    "tasks/levenshtein-distance/alignment",
+
+    # http://rosettacode.org/wiki/Linear_congruential_generator
+    "tasks/linear-congruential-generator",
+
+    # http://rosettacode.org/wiki/Longest_common_subsequence
+    "tasks/longest-common-subsequence",
+
+    # http://rosettacode.org/wiki/Look-and-say_sequence
+    "tasks/look-and-say-sequence",
+
+    # http://rosettacode.org/wiki/Loop_over_multiple_arrays_simultaneously
+    "tasks/loop-over-multiple-arrays-simultaneously",
+
+    # http://rosettacode.org/wiki/Loops/Break
+    "tasks/loops/break",
+
+    # http://rosettacode.org/wiki/Loops/Continue
+    "tasks/loops/continue",
+
+    # http://rosettacode.org/wiki/Loops/Do-while
+    "tasks/loops/do-while",
+
+    # http://rosettacode.org/wiki/Loops/Downward_for
+    "tasks/loops/downward-for",
+
+    # http://rosettacode.org/wiki/Loops/For
+    "tasks/loops/for",
+
+    # http://rosettacode.org/wiki/Loops/For_with_a_specified_step
+    "tasks/loops/for-with-a-specified-step",
+
+    # http://rosettacode.org/wiki/Loops/Foreach
+    "tasks/loops/foreach",
+
+    # http://rosettacode.org/wiki/Loops/Infinite
+    "tasks/loops/infinite",
+
+    # http://rosettacode.org/wiki/Loops/N_plus_one_half
+    "tasks/loops/n-plus-one-half",
+
+    # http://rosettacode.org/wiki/Loops/Nested
+    "tasks/loops/nested",
+
+    # http://rosettacode.org/wiki/Loops/While
+    "tasks/loops/while",
+
+    # http://rosettacode.org/wiki/Ludic_numbers
+    "tasks/ludic-numbers",
+
+    # http://rosettacode.org/wiki/Luhn_test_of_credit_card_numbers
+    "tasks/luhn-test-of-credit-card-numbers",
+
+    # http://rosettacode.org/wiki/Lychrel_numbers
+    "tasks/lychrel-numbers",
+
+    # http://rosettacode.org/wiki/LZW_compression
+    "tasks/lzw-compression",
+
+    # http://rosettacode.org/wiki/Magic_squares_of_odd_order
+    "tasks/magic-squares-of-odd-order",
+
+    # http://rosettacode.org/wiki/Man_or_boy_test
+    "tasks/man-or-boy-test",
+
+    # http://rosettacode.org/wiki/Map_range
+    "tasks/map-range",
+
+    # http://rosettacode.org/wiki/Maximum_triangle_path_sum
+    "tasks/maximum-triangle-path-sum",
+
+    # http://rosettacode.org/wiki/MD4
+    "tasks/md4",
+
+    # http://rosettacode.org/wiki/MD5
+    "tasks/md5",
+
+    # http://rosettacode.org/wiki/MD5/Implementation
+    "tasks/md5/implementation",
+
+    # http://rosettacode.org/wiki/Menu
+    "tasks/menu",
+
+    # https://rosettacode.org/wiki/Metaprogramming
+    "tasks/metaprogramming",
+
+    # http://rosettacode.org/wiki/Metered_concurrency
+    "tasks/metered-concurrency",
+
+    # http://rosettacode.org/wiki/Middle_three_digits
+    "tasks/middle-three-digits",
+
+    # http://rosettacode.org/wiki/Modular_exponentiation
+    "tasks/modular-exponentiation",
+
+    # http://rosettacode.org/wiki/Modular_inverse
+    "tasks/modular-inverse",
+
+    # http://rosettacode.org/wiki/Monte_Carlo_methods
+    "tasks/monte-carlo-methods",
+
+    # http://rosettacode.org/wiki/Mouse_position
+    "tasks/mouse-position",
+
+    # https://rosettacode.org/wiki/Multiplication_tables
+    "tasks/multiplication-tables",
+
+    # http://rosettacode.org/wiki/Mutual_recursion
+    "tasks/mutual-recursion",
+
+    # http://rosettacode.org/wiki/N-queens_problem
+    "tasks/n-queens-problem",
+
+    # http://rosettacode.org/wiki/N'th
+    "tasks/nth",
+
+    # http://rosettacode.org/wiki/Nth_root
+    "tasks/nth-root",
+
+    # http://rosettacode.org/wiki/Null_object
+    "tasks/null-object",
+
+    # http://rosettacode.org/wiki/Numerical_integration
+    "tasks/numerical-integration",
+
+    # http://rosettacode.org/wiki/One_of_n_lines_in_a_file
+    "tasks/one-of-n-lines-in-a-file",
+
+    # http://rosettacode.org/wiki/OpenGL
+    "tasks/opengl",
+
+    # http://rosettacode.org/wiki/Ordered_words
+    "tasks/ordered-words",
+
+    # http://rosettacode.org/wiki/Palindrome_detection
+    "tasks/palindrome-detection",
+
+    # http://rosettacode.org/wiki/Pangram_checker
+    "tasks/pangram-checker",
+
+    # http://rosettacode.org/wiki/Parallel_calculations
+    "tasks/parallel-calculations",
+
+    # http://rosettacode.org/wiki/Parametric_polymorphism
+    "tasks/parametric-polymorphism",
+
+    # http://rosettacode.org/wiki/Pascal%27s_triangle
+    "tasks/pascals-triangle",
+
+    # http://rosettacode.org/wiki/Penney%27s_game
+    "tasks/penneys-game",
+
+    # http://rosettacode.org/wiki/Perfect_numbers
+    "tasks/perfect-numbers",
+
+    # http://rosettacode.org/wiki/Permutations_with_repetitions
+    "tasks/permutations-with-repetitions",
+
+    # http://rosettacode.org/wiki/Pernicious_numbers
+    "tasks/pernicious-numbers",
+
+    # http://rosettacode.org/wiki/Pick_random_element
+    "tasks/pick-random-element",
+
+    # http://rosettacode.org/wiki/Playing_cards
+    "tasks/playing-cards",
+
+    # http://rosettacode.org/wiki/Population_count
+    "tasks/population-count",
+
+    # http://rosettacode.org/wiki/Power_set
+    "tasks/power-set",
+
+    # http://rosettacode.org/wiki/Price_fraction
+    "tasks/price-fraction",
+
+    # http://rosettacode.org/wiki/Primality_by_trial_division
+    "tasks/primality-by-trial-division",
+
+    # http://rosettacode.org/wiki/Prime_decomposition
+    "tasks/prime-decomposition",
+
+    # https://rosettacode.org/wiki/Program_name
+    "tasks/program-name",
+
+    # http://rosettacode.org/wiki/Proper_divisors
+    "tasks/proper-divisors",
+
+    # http://rosettacode.org/wiki/Pythagorean_triples
+    "tasks/pythagorean-triples",
+
+    # http://rosettacode.org/wiki/Queue/Definition
+    "tasks/queue/definition",
+
+    # http://rosettacode.org/wiki/Quine
+    "tasks/quine",
+
+    # http://rosettacode.org/wiki/Random_numbers
+    "tasks/random-numbers",
+
+    # http://rosettacode.org/wiki/Range_expansion
+    "tasks/range-expansion",
+
+    # http://rosettacode.org/wiki/Range_extraction
+    "tasks/range-extraction",
+
+    # http://rosettacode.org/wiki/Read_a_configuration_file
+    "tasks/read-a-configuration-file",
+
+    # http://rosettacode.org/wiki/Read_a_file_line_by_line
+    "tasks/read-a-file-line-by-line",
+
+    # http://rosettacode.org/wiki/Read_a_specific_line_from_a_file
+    "tasks/read-a-specific-line-from-a-file",
+
+    # http://rosettacode.org/wiki/Read_entire_file
+    "tasks/read-entire-file",
+
+    # http://rosettacode.org/wiki/Real_constants_and_functions
+    "tasks/real-constants-and-functions",
+
+    # http://rosettacode.org/wiki/Remove_duplicate_elements
+    "tasks/remove-duplicate-elements",
+
+    # http://rosettacode.org/wiki/Remove_lines_from_a_file
+    "tasks/remove-lines-from-a-file",
+
+    # http://rosettacode.org/wiki/Rename_a_file
+    "tasks/rename-a-file",
+
+    # http://rosettacode.org/wiki/Repeat
+    "tasks/repeat",
+
+    # http://rosettacode.org/wiki/Repeat_a_string
+    "tasks/repeat-a-string",
+
+    # http://rosettacode.org/wiki/Return_multiple_values
+    "tasks/return-multiple-values",
+
+    # http://rosettacode.org/wiki/Reverse_a_string
+    "tasks/reverse-a-string",
+
+    # http://rosettacode.org/wiki/Reverse_words_in_a_string
+    "tasks/reverse-words-in-a-string",
+
+    # http://rosettacode.org/wiki/RIPEMD-160
+    "tasks/ripemd-160",
+
+    # http://rosettacode.org/wiki/Rock-paper-scissors
+    "tasks/rock-paper-scissors",
+
+    # http://rosettacode.org/wiki/Roman_numerals/Decode
+    "tasks/roman-numerals/decode",
+
+    # http://rosettacode.org/wiki/Roman_numerals/Encode
+    "tasks/roman-numerals/encode",
+
+    # http://rosettacode.org/wiki/Roots_of_a_function
+    "tasks/roots-of-a-function",
+
+    # http://rosettacode.org/wiki/Roots_of_unity
+    "tasks/roots-of-unity",
+
+    # http://rosettacode.org/wiki/Rosetta_Code/Count_examples
+    "tasks/rosetta-code/count-examples",
+
+    # http://rosettacode.org/wiki/Rosetta_Code/Find_bare_lang_tags
+    "tasks/rosetta-code/find-bare-lang-tags",
+
+    # http://rosettacode.org/wiki/Rosetta_Code/Find_unimplemented_tasks
+    "tasks/rosetta-code/find-unimplemented-tasks",
+
+    # http://rosettacode.org/wiki/Rosetta_Code/Fix_code_tags
+    "tasks/rosetta-code/fix-code-tags",
+
+    # http://rosettacode.org/wiki/Rot-13
+    "tasks/rot-13",
+
+    # http://rosettacode.org/wiki/RSA_code
+    "tasks/rsa-code",
+
+    # http://rosettacode.org/wiki/Run-length_encoding
+    "tasks/run-length-encoding",
+
+    # http://rosettacode.org/wiki/S-Expressions
+    "tasks/s-expressions",
+
+    # http://rosettacode.org/wiki/Search_a_list
+    "tasks/search-a-list",
+
+    # http://rosettacode.org/wiki/Self-describing_numbers
+    "tasks/self-describing-numbers",
+
+    # http://rosettacode.org/wiki/Sequence_of_non-squares
+    "tasks/sequence-of-non-squares",
+
+    # http://rosettacode.org/wiki/Set
+    "tasks/set",
+
+    # http://rosettacode.org/wiki/SHA-1
+    "tasks/sha-1",
+
+    # http://rosettacode.org/wiki/SHA-256
+    "tasks/sha-256",
+
+    # http://rosettacode.org/wiki/Short-circuit_evaluation
+    "tasks/short-circuit-evaluation",
+
+    # http://rosettacode.org/wiki/Show_the_epoch
+    "tasks/show-the-epoch",
+
+    # http://rosettacode.org/wiki/Sierpinski_triangle
+    "tasks/sierpinski-triangle",
+
+    # http://rosettacode.org/wiki/Sieve_of_Eratosthenes
+    "tasks/sieve-of-eratosthenes",
+
+    # http://rosettacode.org/wiki/Singly-linked_list/Element_definition
+    "tasks/singly-linked-list/element-definition",
+
+    # http://rosettacode.org/wiki/Singly-linked_list/Element_insertion
+    "tasks/singly-linked-list/element-insertion",
+
+    # http://rosettacode.org/wiki/Singly-linked_list/Traversal
+    "tasks/singly-linked-list/traversal",
+
+    # http://rosettacode.org/wiki/Sleep
+    "tasks/sleep",
+
+    # http://rosettacode.org/wiki/Sockets
+    "tasks/sockets",
+
+    # http://rosettacode.org/wiki/Sort_an_array_of_composite_structures
+    "tasks/sort-an-array-of-composite-structures",
+
+    # http://rosettacode.org/wiki/Sort_an_integer_array
+    "tasks/sort-an-integer-array",
+
+    # http://rosettacode.org/wiki/Sort_disjoint_sublist
+    "tasks/sort-disjoint-sublist",
+
+    # http://rosettacode.org/wiki/Sort_using_a_custom_comparator
+    "tasks/sort-using-a-custom-comparator",
+
+    # http://rosettacode.org/wiki/Sorting_algorithms/Bogosort
+    "tasks/sorting-algorithms/bogosort",
+
+    # http://rosettacode.org/wiki/Sorting_algorithms/Bubble_sort
+    "tasks/sorting-algorithms/bubble-sort",
+
+    # http://rosettacode.org/wiki/Sorting_algorithms/Cocktail_sort
+    "tasks/sorting-algorithms/cocktail-sort",
+
+    # http://rosettacode.org/wiki/Sorting_algorithms/Comb_sort
+    "tasks/sorting-algorithms/comb-sort",
+
+    # http://rosettacode.org/wiki/Sorting_algorithms/Counting_sort
+    "tasks/sorting-algorithms/counting-sort",
+
+    # http://rosettacode.org/wiki/Sorting_algorithms/Gnome_sort
+    "tasks/sorting-algorithms/gnome-sort",
+
+    # http://rosettacode.org/wiki/Sorting_algorithms/Heapsort
+    "tasks/sorting-algorithms/heapsort",
+
+    # http://rosettacode.org/wiki/Sorting_algorithms/Insertion_sort
+    "tasks/sorting-algorithms/insertion-sort",
+
+    # http://rosettacode.org/wiki/Sorting_algorithms/Merge_sort
+    "tasks/sorting-algorithms/merge-sort",
+
+    # http://rosettacode.org/wiki/Sorting_algorithms/Pancake_sort
+    "tasks/sorting-algorithms/pancake-sort",
+
+    # http://rosettacode.org/wiki/Sorting_algorithms/Quicksort
+    "tasks/sorting-algorithms/quicksort",
+
+    # http://rosettacode.org/wiki/Sorting_algorithms/Radix_sort
+    "tasks/sorting-algorithms/radix-sort",
+
+    # http://rosettacode.org/wiki/Sorting_algorithms/Selection_sort
+    "tasks/sorting-algorithms/selection-sort",
+
+    # http://rosettacode.org/wiki/Sorting_algorithms/Shell_sort
+    "tasks/sorting-algorithms/shell-sort",
+
+    # http://rosettacode.org/wiki/Sorting_algorithms/Sleep_sort
+    "tasks/sorting-algorithms/sleep-sort",
+
+    # http://rosettacode.org/wiki/Sorting_algorithms/Stooge_sort
+    "tasks/sorting-algorithms/stooge-sort",
+
+    # http://rosettacode.org/wiki/Sparkline_in_unicode
+    "tasks/sparkline-in-unicode",
+
+    # http://rosettacode.org/wiki/Stack
+    "tasks/stack",
+
+    # http://rosettacode.org/wiki/Standard_deviation
+    "tasks/standard-deviation",
+
+    # http://rosettacode.org/wiki/Statistics/Basic
+    "tasks/statistics/basic",
+
+    # http://rosettacode.org/wiki/String_case
+    "tasks/string-case",
+
+    # http://rosettacode.org/wiki/String_comparison
+    "tasks/string-comparison",
+
+    # http://rosettacode.org/wiki/String_concatenation
+    "tasks/string-concatenation",
+
+    # http://rosettacode.org/wiki/String_interpolation_(included)
+    "tasks/string-interpolation-included",
+
+    # http://rosettacode.org/wiki/String_matching
+    "tasks/string-matching",
+
+    # http://rosettacode.org/wiki/Strip_comments_from_a_string
+    "tasks/strip-comments-from-a-string",
+
+    # http://rosettacode.org/wiki/Strip_whitespace_from_a_string/Top_and_tail
+    "tasks/strip-whitespace-from-a-string/top-and-tail",
+
+    # http://rosettacode.org/wiki/Sudoku
+    "tasks/sudoku",
+
+    # http://rosettacode.org/wiki/Sum_and_product_of_an_array
+    "tasks/sum-and-product-of-an-array",
+
+    # http://rosettacode.org/wiki/Sum_digits_of_an_integer
+    "tasks/sum-digits-of-an-integer",
+
+    # http://rosettacode.org/wiki/Sum_multiples_of_3_and_5
+    "tasks/sum-multiples-of-3-and-5",
+
+    # http://rosettacode.org/wiki/Sum_of_a_series
+    "tasks/sum-of-a-series",
+
+    # http://rosettacode.org/wiki/Sum_of_squares
+    "tasks/sum-of-squares",
+
+    # http://rosettacode.org/wiki/Synchronous_concurrency
+    "tasks/synchronous-concurrency",
+
+    # http://rosettacode.org/wiki/System_time
+    "tasks/system-time",
+
+    # http://rosettacode.org/wiki/Taxicab_numbers
+    "tasks/taxicab-numbers",
+
+    # http://rosettacode.org/wiki/The_ISAAC_Cipher
+    "tasks/the-isaac-cipher",
+
+    # http://rosettacode.org/wiki/The_Twelve_Days_of_Christmas
+    "tasks/the-twelve-days-of-christmas",
+
+    # http://rosettacode.org/wiki/Tic-tac-toe
+    "tasks/tic-tac-toe",
+
+    # http://rosettacode.org/wiki/Tokenize_a_string
+    "tasks/tokenize-a-string",
+
+    # http://rosettacode.org/wiki/Towers_of_Hanoi
+    "tasks/towers-of-hanoi",
+
+    # http://rosettacode.org/wiki/Tree_traversal
+    "tasks/tree-traversal",
+
+    # http://rosettacode.org/wiki/Truncate_a_file
+    "tasks/truncate-a-file",
+
+    # http://rosettacode.org/wiki/Ulam_spiral_(for_primes)
+    "tasks/ulam-spiral-for-primes",
+
+    # http://rosettacode.org/wiki/Unicode_variable_names
+    "tasks/unicode-variable-names",
+
+    # http://rosettacode.org/wiki/Unix/ls
+    "tasks/unix/ls",
+
+    # http://rosettacode.org/wiki/URL_parser
+    "tasks/url-parser",
+
+    # http://rosettacode.org/wiki/Use_another_language_to_call_a_function
+    "tasks/use-another-language-to-call-a-function",
+
+    # http://rosettacode.org/wiki/User_input/Text
+    "tasks/user-input/text",
+
+    # http://rosettacode.org/wiki/Vector_products
+    "tasks/vector-products",
+
+    # http://rosettacode.org/wiki/Vigen%C3%A8re_cipher
+    "tasks/vigenere-cipher",
+
+    # http://rosettacode.org/wiki/Visualize_a_tree
+    "tasks/visualize-a-tree",
+
+    # http://rosettacode.org/wiki/Walk_a_directory/Non-recursively
+    "tasks/walk-a-directory/non-recursively",
+
+    # http://rosettacode.org/wiki/Walk_a_directory/Recursively
+    "tasks/walk-a-directory/recursively",
+
+    # http://rosettacode.org/wiki/Window_creation
+    "tasks/window-creation",
+
+    # http://rosettacode.org/wiki/Wireworld
+    "tasks/wireworld",
+
+    # http://rosettacode.org/wiki/Word_wrap
+    "tasks/word-wrap",
+
+    # http://rosettacode.org/wiki/Write_entire_file
+    "tasks/write-entire-file",
+
+    # http://rosettacode.org/wiki/Y_combinator
+    "tasks/y-combinator",
+
+    # http://rosettacode.org/wiki/Zero_to_the_zero_power
+    "tasks/zero-to-the-zero-power",
+
+    # http://rosettacode.org/wiki/Zig-zag_matrix
+    "tasks/zig-zag-matrix",
+]
