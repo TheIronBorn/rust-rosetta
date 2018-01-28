@@ -23,9 +23,9 @@ impl fmt::Display for Tile {
     }
 }
 
-const NEW_TREE_PROB: f32 = 0.01;
-const INITIAL_TREE_PROB: f32 = 0.5;
-const FIRE_PROB: f32 = 0.001;
+const NEW_TREE_PROB: u32 = 100; // 1/100 = 0.01
+const INITIAL_TREE_PROB: u32 = 2; // 1/2 = 0.5
+const FIRE_PROB: u32 = 1000; // 1/1000 = 0.001
 
 const FOREST_WIDTH: usize = 60;
 const FOREST_HEIGHT: usize = 30;
@@ -33,31 +33,31 @@ const FOREST_HEIGHT: usize = 30;
 const SLEEP_MILLIS: u64 = 25;
 
 use std::fmt;
-use std::io;
+use std::io::{self, BufWriter, Stdout};
 use std::io::prelude::*;
-use std::io::BufWriter;
-use std::io::Stdout;
 use std::process::Command;
 use std::time::Duration;
+use std::thread;
+
 use rand::Rng;
 use ansi_term::Colour::*;
 
-use Tile::{Empty, Tree, Burning, Heating};
+use Tile::{Burning, Empty, Heating, Tree};
 
 fn main() {
     let sleep_duration = Duration::from_millis(SLEEP_MILLIS);
     let mut forest = [[Tile::Empty; FOREST_WIDTH]; FOREST_HEIGHT];
+    let mut rng = rand::weak_rng();
 
-    prepopulate_forest(&mut forest);
+    prepopulate_forest(&mut rng, &mut forest);
     print_forest(forest, 0);
 
-    std::thread::sleep(sleep_duration);
+    thread::sleep(sleep_duration);
 
     for generation in 1.. {
-
         for row in forest.iter_mut() {
             for tile in row.iter_mut() {
-                update_tile(tile);
+                update_tile(&mut rng, tile);
             }
         }
 
@@ -71,14 +71,14 @@ fn main() {
 
         print_forest(forest, generation);
 
-        std::thread::sleep(sleep_duration);
+        thread::sleep(sleep_duration);
     }
 }
 
-fn prepopulate_forest(forest: &mut [[Tile; FOREST_WIDTH]; FOREST_HEIGHT]) {
+fn prepopulate_forest<R: Rng>(rng: &mut R, forest: &mut [[Tile; FOREST_WIDTH]; FOREST_HEIGHT]) {
     for row in forest.iter_mut() {
         for tile in row.iter_mut() {
-            *tile = if prob_check(INITIAL_TREE_PROB) {
+            *tile = if rng.gen_weighted_bool(INITIAL_TREE_PROB) {
                 Tree
             } else {
                 Empty
@@ -87,17 +87,17 @@ fn prepopulate_forest(forest: &mut [[Tile; FOREST_WIDTH]; FOREST_HEIGHT]) {
     }
 }
 
-fn update_tile(tile: &mut Tile) {
+fn update_tile<R: Rng>(rng: &mut R, tile: &mut Tile) {
     *tile = match *tile {
         Empty => {
-            if prob_check(NEW_TREE_PROB) == true {
+            if rng.gen_weighted_bool(NEW_TREE_PROB) {
                 Tree
             } else {
                 Empty
             }
         }
         Tree => {
-            if prob_check(FIRE_PROB) == true {
+            if rng.gen_weighted_bool(FIRE_PROB) {
                 Burning
             } else {
                 Tree
@@ -109,21 +109,26 @@ fn update_tile(tile: &mut Tile) {
 }
 
 fn heat_neighbors(forest: &mut [[Tile; FOREST_WIDTH]; FOREST_HEIGHT], y: usize, x: usize) {
-    let neighbors = [(-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1)];
+    let neighbors = [
+        (-1, -1),
+        (-1, 0),
+        (-1, 1),
+        (0, -1),
+        (0, 1),
+        (1, -1),
+        (1, 0),
+        (1, 1),
+    ];
 
-    for &(xoff, yoff) in neighbors.iter() {
-        let nx: i32 = (x as i32) + xoff;
-        let ny: i32 = (y as i32) + yoff;
-        if (0..FOREST_WIDTH as i32).contains(nx) && (0..FOREST_HEIGHT as i32).contains(ny) &&
-           forest[ny as usize][nx as usize] == Tree {
+    for &(x_off, y_off) in &neighbors {
+        let nx = x as i8 + x_off;
+        let ny = y as i8 + y_off;
+        if (0..FOREST_WIDTH as i8).contains(nx) && (0..FOREST_HEIGHT as i8).contains(ny)
+            && forest[ny as usize][nx as usize] == Tree
+        {
             forest[ny as usize][nx as usize] = Heating
         }
     }
-}
-
-fn prob_check(chance: f32) -> bool {
-    let roll = rand::thread_rng().gen::<f32>();
-    if chance - roll > 0.0 { true } else { false }
 }
 
 fn print_forest(forest: [[Tile; FOREST_WIDTH]; FOREST_HEIGHT], generation: u32) {
